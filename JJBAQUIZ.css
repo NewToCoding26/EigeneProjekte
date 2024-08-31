@@ -1,0 +1,16 @@
+* {
+    background-color: rgb(243,220,143);
+}
+
+.title {
+    text-align: center;
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+    color: rgb(129,121,173);
+    text-shadow: 3px 3px 2px #000;
+}
+.welcome {
+    text-align: start;
+}
+

@@ -15,11 +15,18 @@
     text-align: left;
     padding: 20px;
     margin: 10px;
-    
+}
+
+.noUnderline {
+    text-decoration: none;
 }
 
 .text {
-    font-size: 23px;
+    font-size: 21px;
+}
+
+section {
+    color: #283a2c;
 }
 
 

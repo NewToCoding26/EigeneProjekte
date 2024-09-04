@@ -24,22 +24,11 @@
                 No matter which level you start with, there’s something here for everyone. So, choose your level, dive in, and see how far you can go. <br> <br> Good luck!</p>
         </section>
         <section>
-            <br>
-            <div id="difficulty-selection">
+            <div class="difficulty" id="difficulty-selection">
                 <h2>Select Difficulty Level</h2>
-                <button onclick="startQuiz('Beginner')">Beginner</button>
-                <button onclick="startQuiz('Fan')">Fan</button>
-                <button onclick="startQuiz('Veteran')">Veteran</button>
-            </div>
-        </section>
-        <section>
-            <div id="quiz-section" class="hidden">
-                <h2>Quiz</h2>
-                <p id="question">Question will appear here</p>
-                <button onclick="answerQuestion('a')">Answer A</button>
-                <button onclick="answerQuestion('b')">Answer B</button>
-                <button onclick="answerQuestion('c')">Answer C</button>
-                <button onclick="answerQuestion('d')">Answer D</button>
+                <button class="btn" onclick="redirectToQuiz('Beginner')">Beginner</button>
+                <button class="btn" onclick="redirectToQuiz('Fan')">Fan</button>
+                <button class="btn" onclick="redirectToQuiz('Veteran')">Veteran</button>
             </div>
         </section>
     </main>

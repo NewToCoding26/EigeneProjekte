@@ -25,16 +25,24 @@
         </section>
         <section>
             <br>
-            <br>
-            <h2>What difficulty level will you choose?</h2>
-            <input type="input" list="difficulty">
-            <input class="btn" type="submit">
-            <datalist id="difficulty">
-                <option value="BEGINNER" id="beginner"></option>
-                <option value="FAN" id="Fan"></option>
-                <option value="VETERAN" id="Veteran"></option>
-            </datalist>
+            <div id="difficulty-selection">
+                <h2>Select Difficulty Level</h2>
+                <button onclick="startQuiz('Beginner')">Beginner</button>
+                <button onclick="startQuiz('Fan')">Fan</button>
+                <button onclick="startQuiz('Veteran')">Veteran</button>
+            </div>
+        </section>
+        <section>
+            <div id="quiz-section" class="hidden">
+                <h2>Quiz</h2>
+                <p id="question">Question will appear here</p>
+                <button onclick="answerQuestion('a')">Answer A</button>
+                <button onclick="answerQuestion('b')">Answer B</button>
+                <button onclick="answerQuestion('c')">Answer C</button>
+                <button onclick="answerQuestion('d')">Answer D</button>
+            </div>
         </section>
     </main>
+    <script src="JJBAQUIZ.js"></script>
 </body>
 </html>

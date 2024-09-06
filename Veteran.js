@@ -1,51 +1,51 @@
 const quizData = [
     {
-        question: "Who is the first JoJo in the JoJo's Bizarre Adventure series?",
+        question: "What was the name of Joseph Joestar's undercover alias during his time in Italy before Stardust Crusaders?",
         options: {
-            a: "Joseph Joestar",
-            b: "Jotaro Kujo",
-            c: "Jonathan Joestar",
-            d: "Josuke Higashikata"
+            a: "Joseph Ferrara",
+            b: "F. Joseph Joestar",
+            c: "Mr. Joseph",
+            d: "Fumihiko Joseph"
         },
         correctAnswer: 'c'
     },
     {
-        question: "What is the name of Dio's Stand in 'Stardust Crusaders'?",
+        question: "In JoJolands, what does Dragona Joestar's Smooth Operators manipulate during the heist to avoid detection?",
         options: {
-            a: "Star Platinum",
-            b: "The World",
-            c: "Crazy Diamond",
-            d: "Silver Chariot"
-        },
-        correctAnswer: 'b'
-    },
-    {
-        question: "Which object does Kira Yoshikage love the most?",
-        options: {
-            a: "A book",
-            b: "A watch",
-            c: "A ring",
-            d: "A hand"
+            a: "Fingerprints on a security pad",
+            b: "Surveillance camera wiring",
+            c: "Security guards’ uniforms",
+            d: "Facial features on a driver's license"
         },
         correctAnswer: 'd'
     },
     {
-        question: "Who is Joseph Joestar's mentor in 'Battle Tendency'?",
+        question: "In Steel Ball Run what is the full name of Gyro Zeppeli's horse?",
         options: {
-            a: "Lisa Lisa",
-            b: "Caesar Zeppeli",
-            c: "Rudol von Stroheim",
-            d: "Robert E.O. Speedwagon"
+            a: "Valkyrie",
+            b: "Silver Bullet",
+            c: "Ball Breaker",
+            d: "Iron Maiden"
         },
         correctAnswer: 'a'
     },
     {
-        question: "In 'Diamond is Unbreakable', what is the name of Josuke's Stand?",
+        question: "How many times does Diego Brando (AU) fight Johnny Joestar throughout Steel Ball Run?",
         options: {
-            a: "The Hand",
-            b: "Crazy Diamond",
-            c: "Killer Queen",
-            d: "Heaven's Door"
+            a: "Two",
+            b: "Three",
+            c: "Four",
+            d: "Five"
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "In JoJolion which fruit has the key role in the plot for curing diseases and gaining Stand abilities?",
+        options: {
+            a: "Locacaca",
+            b: "Rokakaka",
+            c: "Devil's Palm",
+            d: "Tusk"
         },
         correctAnswer: 'b'
     }
@@ -108,29 +108,59 @@ function answerQuestion(answer) {
 
 // Function to display the score and provide options to restart or change difficulty
 function displayScore() {
-    document.getElementById('quiz-section').innerHTML = `
-        <h3>Your score: ${score}/${quizData.length}</h3>
-        <button onclick="restartQuiz()" class="btn">Restart Quiz</button>
-        <h2>Select Difficulty Level</h2>
-        <button onclick="selectFanDifficulty()" class="btn">Beginner</button>
-        <button onclick="selectVeteranDifficulty()" class="btn">Fan</button>
-    `;
+    // Hide the quiz section
+    document.getElementById('quiz-section').style.display = 'none';
+
+    // Show the result section
+    const resultSection = document.getElementById('result-section');
+    resultSection.style.display = 'block';
+
+    // Update the score in the result section
+    document.getElementById('score-text').innerText = `Your score: ${score}/${quizData.length}`;
 }
 
-// Function to restart the quiz by refreshing the page
+// Function to restart the quiz by resetting the state and hiding the result section
 function restartQuiz() {
-    location.reload(); // Reloads the current page to restart the quiz
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+    
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Reset the quiz
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load the first question again
+}
+
+// Function to redirect to Beginner difficulty page
+function selectBeginnerDifficulty() {
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+    
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Optionally reset the quiz if needed
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load questions for Beginner difficulty
 }
 
 // Function to redirect to Fan difficulty page
 function selectFanDifficulty() {
-    window.location.href = "Beginner.html"; // Redirect to Fan difficulty page
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Optionally reset the quiz if needed
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load questions for Fan difficulty
 }
 
-// Function to redirect to Veteran difficulty page
-function selectVeteranDifficulty() {
-    window.location.href = "Fan.html"; // Redirect to Veteran difficulty page
-}
 
 // Load the first question when the page is loaded
 window.onload = loadQuestion;

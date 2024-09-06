@@ -108,29 +108,59 @@ function answerQuestion(answer) {
 
 // Function to display the score and provide options to restart or change difficulty
 function displayScore() {
-    document.getElementById('quiz-section').innerHTML = `
-        <h3>Your score: ${score}/${quizData.length}</h3>
-        <button onclick="restartQuiz()" class="btn">Restart Quiz</button>
-        <h2>Select Difficulty Level</h2>
-        <button onclick="selectFanDifficulty()" class="btn">Beginner</button>
-        <button onclick="selectVeteranDifficulty()" class="btn">Veteran</button>
-    `;
+    // Hide the quiz section
+    document.getElementById('quiz-section').style.display = 'none';
+
+    // Show the result section
+    const resultSection = document.getElementById('result-section');
+    resultSection.style.display = 'block';
+
+    // Update the score in the result section
+    document.getElementById('score-text').innerText = `Your score: ${score}/${quizData.length}`;
 }
 
-// Function to restart the quiz by refreshing the page
+// Function to restart the quiz by resetting the state and hiding the result section
 function restartQuiz() {
-    location.reload(); // Reloads the current page to restart the quiz
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+    
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Reset the quiz
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load the first question again
 }
 
-// Function to redirect to Fan difficulty page
-function selectFanDifficulty() {
-    window.location.href = "Beginner.html"; // Redirect to Fan difficulty page
+// Function to redirect to Beginner difficulty page
+function selectBeginnerDifficulty() {
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+    
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Optionally reset the quiz if needed
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load questions for Beginner difficulty
 }
 
 // Function to redirect to Veteran difficulty page
 function selectVeteranDifficulty() {
-    window.location.href = "Veteran.html"; // Redirect to Veteran difficulty page
+    // Hide the result section
+    document.getElementById('result-section').style.display = 'none';
+
+    // Show the quiz section
+    document.getElementById('quiz-section').style.display = 'block';
+
+    // Optionally reset the quiz if needed
+    currentQuestion = 0;
+    score = 0;
+    loadQuestion(); // Load questions for Veteran difficulty
 }
+
 
 // Load the first question when the page is loaded
 window.onload = loadQuestion;

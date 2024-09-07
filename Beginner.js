@@ -120,47 +120,29 @@ function displayScore() {
 }
 
 
-// Function to restart the quiz by resetting the state and hiding the result section
 function restartQuiz() {
     // Hide the result section
     document.getElementById('result-section').style.display = 'none';
-    
+  
     // Show the quiz section
     document.getElementById('quiz-section').style.display = 'block';
-
+  
     // Reset the quiz
     currentQuestion = 0;
     score = 0;
     loadQuestion(); // Load the first question again
-}
+  }
 
-// Function to redirect to Fan difficulty page
+// Redirect to Fan difficulty
 function selectFanDifficulty() {
-    // Hide the result section
-    document.getElementById('result-section').style.display = 'none';
-    
-    // Show the quiz section
-    document.getElementById('quiz-section').style.display = 'block';
-
-    // Optionally reset the quiz if needed
-    currentQuestion = 0;
-    score = 0;
-    loadQuestion(); // Load questions for Fan difficulty
+    window.location.href = 'Fan.html'; // Navigate to the Fan quiz
 }
 
-// Function to redirect to Veteran difficulty page
+// Redirect to Veteran difficulty
 function selectVeteranDifficulty() {
-    // Hide the result section
-    document.getElementById('result-section').style.display = 'none';
-
-    // Show the quiz section
-    document.getElementById('quiz-section').style.display = 'block';
-
-    // Optionally reset the quiz if needed
-    currentQuestion = 0;
-    score = 0;
-    loadQuestion(); // Load questions for Veteran difficulty
+    window.location.href = 'Veteran.html'; // Navigate to the Veteran quiz
 }
+
 
 
 // Load the first question when the page is loaded

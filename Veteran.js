@@ -119,46 +119,27 @@ function displayScore() {
     document.getElementById('score-text').innerText = `Your score: ${score}/${quizData.length}`;
 }
 
-// Function to restart the quiz by resetting the state and hiding the result section
 function restartQuiz() {
     // Hide the result section
     document.getElementById('result-section').style.display = 'none';
-    
+  
     // Show the quiz section
     document.getElementById('quiz-section').style.display = 'block';
-
+  
     // Reset the quiz
     currentQuestion = 0;
     score = 0;
     loadQuestion(); // Load the first question again
-}
+  }
 
-// Function to redirect to Beginner difficulty page
+// Redirect to Beginner difficulty
 function selectBeginnerDifficulty() {
-    // Hide the result section
-    document.getElementById('result-section').style.display = 'none';
-    
-    // Show the quiz section
-    document.getElementById('quiz-section').style.display = 'block';
-
-    // Optionally reset the quiz if needed
-    currentQuestion = 0;
-    score = 0;
-    loadQuestion(); // Load questions for Beginner difficulty
+    window.location.href = 'Beginner.html'; // Navigate to the Beginner quiz
 }
 
-// Function to redirect to Fan difficulty page
+// Redirect to Fan difficulty
 function selectFanDifficulty() {
-    // Hide the result section
-    document.getElementById('result-section').style.display = 'none';
-
-    // Show the quiz section
-    document.getElementById('quiz-section').style.display = 'block';
-
-    // Optionally reset the quiz if needed
-    currentQuestion = 0;
-    score = 0;
-    loadQuestion(); // Load questions for Fan difficulty
+    window.location.href = 'Fan.html'; // Navigate to the Fan quiz
 }
 
 

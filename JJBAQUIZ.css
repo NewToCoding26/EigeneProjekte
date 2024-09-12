@@ -33,8 +33,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     white-space: nowrap; /* Prevents text from wrapping */
     z-index: 10; /* Ensure the tooltip is above other elements */
-    top: 100%; /* Position tooltip below the text */
-    left: 50%; /* Center the tooltip horizontally */
+    top: -130%; /* Position tooltip below the text */
+    left: 70%; /* Center the tooltip horizontally */
     transform: translateX(-50%); /* Adjust positioning to center the tooltip */
     margin-top: 5px; /* Space between text and tooltip */
     font-size: 14px;
